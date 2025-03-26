@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 //lombok을 이용해 메소드를 자동화(생성자 일일이 추가할 필요없게)
 //테이블 조인 작업 시 반드시 @toString은 삭제. 사용하면 안 된다.
@@ -18,7 +19,7 @@ import org.springframework.data.annotation.LastModifiedDate;
         initialValue = 1, //시작값
         allocationSize = 1  //크기
 )   //Entity와 1:1로만 사용
-
+@EntityListeners(AuditingEntityListener.class)  //createdDate, LastModifyDate 불가능
 public class SearchEntity {
 
     @Id //기본키
