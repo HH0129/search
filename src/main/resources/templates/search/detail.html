@@ -21,21 +21,21 @@
                 <!--Controller에서 1개의 데이터를 전달받으면 data-->
                 <div class="card-body"><!--입력양식(detailDTO를 참고해서)-->
                     <div class="mb-3 mt-3">
-                        <p>번호<span th:text="${data.id}"></span></p>
+                        <p>번호 : <span th:text="${data.id}"></span></p>
                     </div>
                     <div class="mb-3 mt-3">
-                        <p>제목<span th:text="${data.subject}"></span></p>
+                        <p>제목 : <span th:text="${data.subject}"></span></p>
                     </div>
                     <!--빈공간-->
                     <div class="mb-3 mt-3"><!--위 여백3 (6)-->
-                        <p>내용</p>
+                        <p>내용 >></p>
                         <p th:text="${data.content}"></p>
                     </div>
                     <div class="mb-3 mt-3">
-                        <p>작성자 <span th:text="${data.author}"></span></p>
+                        <p>작성자 : <span th:text="${data.author}"></span></p>
                     </div>
                     <div class="mb-3 mt-3">
-                        <p>작성일 <span th:text="${data.modDate}"></span></p>
+                        <p>작성일 : <span th:text="${data.modDate}"></span></p>
                     </div>
                 </div>
                 <div class="card-footer"><!--Controller에서 modify, delete는 인수가 id-->

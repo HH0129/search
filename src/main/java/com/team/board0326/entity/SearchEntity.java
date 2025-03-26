@@ -6,6 +6,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDateTime;
+
 //lombok을 이용해 메소드를 자동화(생성자 일일이 추가할 필요없게)
 //테이블 조인 작업 시 반드시 @toString은 삭제. 사용하면 안 된다.
 //toString 사용 시 재귀함수로 무한반복 오류의 굴레에 빠지게 된다... 조심할것!
@@ -38,11 +40,11 @@ public class SearchEntity {
 
     @CreatedDate    //생성 시 자동생성
     @Column(name = "regDate", nullable = false)
-    private String regDate;     //등록일자
+    private LocalDateTime regDate;     //등록일자
 
     @LastModifiedDate   //최근(최종)수정 시 자동생성
     @Column(name = "modDate")
-    private String modDate;     //수정일자
+    private LocalDateTime modDate;     //수정일자
 
     //생성자, Getter, Setter, toString, Build 메소드
 
